@@ -3,16 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>Tip Calculator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
-    <link rel="stylsheet" type="text/css" href="styles.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <header>
-      <h2>Tipping Calculator</h2>
-    </header>
-    <h4 id="totalBill">Total Bill:</h4>
-    <h4 id="experience">Experience:</h4>
-    <h3 id="totalAmount">My Tip is:</h3>
+    <div class="container">
+      <div class="centered">
+        <header>
+          <h2 id="header">Tipping Calculator</h2>
+        </header>
+        <h2>Total Bill:
+          <input type="text"
+            id="cost"
+            onchange="originalBill()"
+          >
+            <p id="renderedBill"></p>
+        </h2>
+        <h2 id="experience">Experience:</h2>
+          <button>Excellent</button> <space> <button>Great</button> <br>
+          <button>Good</button> <button>EH</button>
+        <h3 id="totalAmount">My Tip is: <input></input></h3>
+        <h2> My Total Bill: <input></input></h2>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
