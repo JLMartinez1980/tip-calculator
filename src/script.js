@@ -31,6 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const changeEventHandler = event => {
   if(!event.target.value) alert('please selct an experience');
-} else {
-  return
+ else alert('It looks like you had ' + event.target.value + ' experience');
+
 }
