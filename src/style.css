@@ -17,3 +17,9 @@ container {
   left: 50%;
   transform: translate(-50%, -50%);
 } */ */
+
+
+#form {
+  border-style: double;
+  border-width: thick;
+}

@@ -9,28 +9,38 @@ const renderBill = () => {
 const button = document.getElementById('saveAmount');
 button.addEventListener('click', renderBill);
 
-//Here is where I will figure out the experience/
-//pair that experience with a tip amount
-//make sure customer is happy with tip amount
+//use a switch to figure out the tip% attached to an experience
+const tipCal = (changeEventHandler) => {
+  let percentage;
+  switch(changeEventHandler) {
+    case "EXCELLENT":
+      return tip = 11/50;
+    case "GREAT":
+     return tip = 1/5;
+      break;
+    case "GOOD":
+      return tip = 9/50;
+      break;
+    case "EH":
+     return tip = 1/10;
+  }
+}
 
-//Attempt 1
-// const experience = document.getElementById("experience");
-// const userExperience = experience.options[experience.selectedIndex].value;
-//
-// console.log(userExperience, '1');
+console.log('1', tipCal);
+
+const myExperience = document.getElementById("form");
+
+myExperience.addEventListener("change", tipCal);
 
 
-//Attempt 2
 
 
-// I need to figure out how to return  innerhtml, i think to render the
-//experience and then attach that experience to a value..
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('select[name="experience"]').onchange=changeEventHandler;
-}, false);
-
-const changeEventHandler = event => {
-  if(!event.target.value) alert('please selct an experience');
- else alert('It looks like you had ' + event.target.value + ' experience');
-
+// Thought 1  With this I do get somethign to render to the screen
+// just not the tip %
+const changeEventHandler = (percentage, tipCal) => {
+  if(!event.target.value) return ('please selct an experience');
+ else (document.getElementById("percentage").innerHTML = percentage)
+ alert('It looks like you had ' + event.target.value + ' experience');
+ console.log('2', event);
+ console.log('3', tipCal);
 }
