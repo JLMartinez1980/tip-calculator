@@ -37,9 +37,9 @@ myExperience.addEventListener("change", tipCal);
 
 // Thought 1  With this I do get somethign to render to the screen
 // just not the tip %
-const changeEventHandler = (percentage, tipCal) => {
+const changeEventHandler = (tipCal, percentage) => {
   if(!event.target.value) return ('please selct an experience');
- else (document.getElementById("percentage").innerHTML = percentage)
+ else (document.getElementById("percentage").innerHTML = tipCal)
  alert('It looks like you had ' + event.target.value + ' experience');
  console.log('2', event);
  console.log('3', tipCal);
