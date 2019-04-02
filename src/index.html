@@ -15,22 +15,29 @@
         </div>
         <h3 id="totalBill">Your bill before tip is:
           <input id="reneredBill" type="text" placeholder="Numbers only"/>
-          <p id="enteredBill"></p> 
-          <!-- will need to move button element  -->
-          <button id="saveAmount" onclick"renderBill()">ENTER</button>
+          <p id="enteredBill"></p>
         </h3>
           <form id="form">
             <label>How was your dining experience?
-              <select id="experience" name ="experience" onchange="changeEventHandler(this.value)">
+              <select id="experience" name ="experience" onchange="changeEventHandler(this)">
                 <option value="">SELECT ONE </option>
-                <option id="EXCELLENT" value="excellent">EXCELLENT </option>
-                <option id="GREAT" value="great">GREAT </option>
-                <option id="GOOD" value="good">GOOD </option>
-                <option id="EH" value="eh">EH </option>
+                <option value="excellent">EXCELLENT </option>
+                <option value="great">GREAT </option>
+                <option value="good">GOOD </option>
+                <option value="eh">EH </option>
               </select>
             </form>
       </div>
+      <h3>Based upon your experience we suggest you tip:</h3>
       <p id="percentage"></p>
+      <div>
+        <h2>Does this amount seem fair?</h2>
+        <button id="leaveTip" onclick"calculateBill()">YES</button>  <button id="notThisONe">NO</button>
+      </div>
+      <div>
+        <h3>This is your total Bill including tip: </h3>
+        <input id="showMeTheMoney">
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
