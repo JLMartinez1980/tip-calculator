@@ -27,20 +27,13 @@ function changeEventHandler({ value }) {
   document.getElementById("percentage").innerHTML = `Total: $${total}`;
 }
 
-function calculateBill({ value }) {
-  console.log(value, 'longShot')
-  const newTotal = document.getElementById('reneredBill').value;
-  console.log(newTotal, 'thisWorks');
-  const newTip = parseFloat(document.getElementById("percentage").value);
-  console.log(newTip, "thisDoesnt");
-  console.log("percentage", percentage);
-  const newTipPercentage = tipCal(value);
-  console.log('notYet', newTipPercentage);
-  console.log('uhuh', value);
-
-  // document.getElementById("showMeTheMoney").innerHTML = `$${newTotal + newTip}`;
+function calculateBill() {
+  const bill = Number(document.getElementById('reneredBill').value);
+  const calculatedTip = document.getElementById("percentage").innerHTML;
+  const newTip = Number(calculatedTip.split(' ')[1].replace('$', ''));
+  document.getElementById("showMeTheMoney").innerHTML = `$${bill + newTip}`;
 }
 
-
+//cannot get a value from a button
 const button = document.getElementById('leaveTip');
 button.addEventListener('click', calculateBill);
