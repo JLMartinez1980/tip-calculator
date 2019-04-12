@@ -36,7 +36,9 @@ function calculateBill() {
   const bill = Number(document.getElementById('reneredBill').value);
   const calculatedTip = document.getElementById("percentage").innerHTML;
   const newTip = Number(calculatedTip.split(' ')[1].replace('$', ''));
+  document.getElementById("showTheBill").innerHTML = "This is your total Bill including tip:";
   document.getElementById("showMeTheMoney").innerHTML = `$${bill + newTip}`;
+  document.getElementById('fairOrNot').innerHTML = "Does this amount seem fair?";
 }
 
 //cannot get a value from a button
@@ -56,18 +58,24 @@ function customizeTip() {
   const lastButton = document.createElement("BUTTON");
   lastButton.innerHTML = "ADD";
   document.body.appendChild(lastButton);
+  lastButton.setAttribute("id", "leaveOtherTip");
+  console.log('lastButton', lastButton);
 }
 
 const customizeButton = document.getElementById('notThisONe');
 customizeButton.addEventListener('click', customizeTip);
+console.log('customizeButton', customizeButton);
 
 // using the generated input id, to receive a value to add that value to the Bill
 function calculateFinalButton() {
-  console.log(calculateFinalButton, 'calculateFinalButton');
-
-  // console.log('calculateBill', calculateFinalBill);
-  // const bill = Number(document.getElementById('redneredBill').value);
-  // console.log('bill', bill);
-  // const finalTip = Number(document.getElementById("customizeTip").value);
-  // console.log('leaveNewTip', leaveNewTip);
+  console.log('calculateFinalButton', calculateFinalButton);
+  const bill = document.getElementById('reneredBill').value;
+  const personalTip = document.getElementById('customizeTip').value;
+  const fatTip = Number(bill) + Number(personalTip);
 }
+
+
+// the console is saying, cannot read innerHTML of null line 79
+const leavePersonalTip = document.getElementById('leaveOtherTip').innerHTML;
+console.log('leavePersonalTip', leavePersonalTip);
+button.addEventListener('click', calculateFinalButton);
