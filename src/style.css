@@ -1,4 +1,5 @@
-/* body {
+/*
+body {
   background-image: url(./images/Tip.jpg);
   background-size: cover;
 }
@@ -10,16 +11,21 @@ container {
 }
 
 
-/* Centered text */
-/* .centered {
+
+.centered {
   position: absolute;
   top: 73.35%;
   left: 50%;
   transform: translate(-50%, -50%);
-} */ */
+}
+
+.doYouTip {
+  font-size: 5px;
+}
 
 
 #form {
   border-style: double;
   border-width: thick;
 }
+/*
