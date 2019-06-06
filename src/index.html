@@ -9,43 +9,46 @@
   <body>
     <div id="createForm" class="container">
       <div class="centered">
-        <div>
+        <!-- <div>
           <h3 id="doYouTip">Would you like to leave a tip?</h3>
           <button id="yesIWould">YES</button>  <button id="noIDoNot">NO</button>
-        </div>
-        <div id="whatIsTheBill">
-        </div>
-        <div id="inputBillAmount">
-        </div>
-
-
-     <!-- <h3 id="totalBill">Your bill before tip is:
-          <input id="reneredBill" type="text" placeholder="Numbers only"/>
-          <p id="enteredBill"></p>
-        </h3>
+        </div> -->
+        <div>
+          <form id="createTheButton">
+            <h3 id="totalBill">Your bill before tip is: </h3>
+            <input id="reneredBill" type="text" placeholder="Numbers only"/> <br>
+            <label>How would you like to tip? </label> <br>
+          </form>
           <form id="form">
-            <label>How was your dining experience?
-              <select id="experience" name ="experience" onchange="changeEventHandler(this)">
+            <label>Based upon Your experience?
+              <select id="experience" name ="custom" onchange="changeEventHandler(this)">
                 <option value="">SELECT ONE </option>
                 <option value="excellent">EXCELLENT </option>
                 <option value="great">GREAT </option>
                 <option value="good">GOOD </option>
                 <option value="eh">EH </option>
               </select>
-            </form>
-      </div>
-      <h3>Based upon your experience we suggest you tip:</h3>
-      <p id="percentage"></p>
+            <div>
+              <p>Based upon your experience we suggest you tip:</p>
+                <p id="percentage"></p>
+                <!-- <h2 id="fairOrNot"></h2> -->
+                <button id="leaveTip" onclick"calculateBill()">YES</button>
+                <p id="showTheBill"></p>
+                <p id="showMeTheMoney"></p>
+            </div>
+          </form> <br>
+          <form>
+            <label>Would you like to leave a custom tip?
+              <p id="customTip">Leave a custom tip: </p>
+              <input id="reneredCustomTip" type="text" placeholder="Numbers only"/> <br>
+              <button id="leaveCustomTip"> CUSTOM TIP </button> <br>
+          </form>
+          <button id="noIWillNotTip"> NO TIP </button> <br>
+            <p id="enteredBill"></p>
+        </div>
       <div>
-        <h2 id="fairOrNot"></h2>
-        <button id="leaveTip" onclick"calculateBill()">YES</button>  <button id="notThisONe" onclick"customizeTip">NO</button>
-      </div>
-      <div>
-        <h3 id="showTheBill"></h3>
-         <p id="showMeTheMoney"></p>
-      </div> -->
-     </div>
-   </div>
-    <script src="App.js"></script>
+    </div>
+   <script src="script.js"></script>
+    <!-- <script src="App.js"></script> -->
   </body>
 </html>
