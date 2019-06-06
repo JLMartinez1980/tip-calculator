@@ -8,85 +8,40 @@ const leaveNoTip = () => {
   const whyNot = document.createElement("P");
   whyNot.innerHTML = string.join(' ');
   document.body.appendChild(whyNot);
-}
+};
 
 const noIDoNotTip = document.getElementById('noIDoNot');
 noIDoNot.addEventListener('click', leaveNoTip);
 
-/*
-  Create multiple functions that will allow me to use thier
-  individual values for future onclicks
-*/
+//Create a form dynamically
 const createTheForm = () => {
-  let string = ["Would you like to leave a tip based",
-  "upon your experience, or leave a custom tip?"]
-  const doYouTip = document.createElement("H3");
-  doYouTip.innerHTML = string.join(' ');
-  document.body.appendChild(doYouTip);
-};
+  let gatherInformation = document.createElement("FORM");
+  gatherInformation.setAttribute("id", "newForm");
+  document.body.appendChild(gatherInformation);
 
-  //Create experience button
-const createExperienceButton = () => {
+  //create a place to input bill
+  let inputTotalBill = document.createElement("INPUT");
+  inputTotalBill.setAttribute("type", "text");
+  inputTotalBill.setAttribute("placeholder", "What is the total Bill");
+  inputTotalBill.setAttribute("id", "totalBill");
+  document.getElementById("newForm").appendChild(inputTotalBill);
+
+  //Set up question leading to two buttons
+  let question = ["How would you prefer to tip?"];
+  let howWouldYouLikeToTip = document.createElement('P');
+  howWouldYouLikeToTip.innerHTML = question.join(' ');
+  document.body.appendChild(howWouldYouLikeToTip);
+
   let experienceButton = document.createElement('BUTTON');
   experienceButton.innerHTML = "EXPERIENCE";
-  experienceButton.id = "myExperience";
+  experienceButton.setAttribute = ("id", "myExperience");
   document.body.appendChild(experienceButton);
-};
-  //Create Custom Button
-const createCustomButton = () => {
+
   let customButton = document.createElement('BUTTON');
   customButton.innerHTML = "Custom";
-  customButton.id = "leaveCustomTip";
+  customButton.setAttribute = ("id", "leaveCustomTip");
   document.body.appendChild(customButton);
 };
 
-  //create an input to put the Bill
-  // I would like to move this underneath the two buttons
-const createInput = () => {
-  let totalAmountInput = document.createElement('INPUT');
-  totalAmountInput.setAttribute("type", "text");
-  totalAmountInput.setAttribute("value", "Your Bill Amount here");
-  totalAmountInput.setAttribute("id", "totalAmountId");
-  document.body.appendChild(totalAmountInput);
-}
-
-const allFormFunctions = () => {
-  createTheForm();
-  creatExperienceButton();
-  createCustomButton();
-  createInput();
-};
-
-const createFormButton = document.getElementById('yesIWould');
-createFormButton.addEventListener('click',allFormFunctions);
-
-//figure out total bill before tip?
-//SEAN !! This return null, no value
-// window.onload += function() {
-// const figureTotalBill = document.getElementById('totalAmountId');
-// console.log('figureTotalBill', figureTotalBill);
-// };
-// console.log(window.onload);
-
-const figureTotalBill = element.getAttribute(totalAmountInput);
-console.log('figureTotalBill', figureTotalBill);
-
-//To leave a custom tip
-
-
-
-//To leave tip based upon experience
-const tipCal = (value) => {
-  switch(value) {
-    case "excellent":
-      return 11/50;
-    case "great":
-     return 1/5;
-      break;
-    case "good":
-      return 9/50;
-      break;
-    case "eh":
-     return 1/10;
-  }
-}
+const yesIWould = document.getElementById('yesIWould');
+yesIWould.addEventListener('click', createTheForm);
