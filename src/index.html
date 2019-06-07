@@ -35,16 +35,16 @@
                 <button id="leaveTip" onclick"calculateBill()">YES</button>
                 <p id="showTheBill"></p>
                 <p id="showMeTheMoney"></p>
-            </div>
-          </form> <br>
-          <form>
+            </div> <br>
             <label>Would you like to leave a custom tip?
               <p id="customTip">Leave a custom tip: </p>
               <input id="reneredCustomTip" type="text" placeholder="Numbers only"/> <br>
-              <button id="leaveCustomTip"> CUSTOM TIP </button> <br>
+              <button id="leaveCustomTip" onclick="customTip()"> CUSTOM TIP </button> <br>
+              <p id="customInformation"></p>
+              <p id="showCustomTip"></p>
           </form>
-          <button id="noIWillNotTip"> NO TIP </button> <br>
-            <p id="enteredBill"></p>
+          <button id="noIWillNotTip" onclick"leaveNoTip()"> NO TIP </button> <br>
+            <p id="leaveNoTip"></p>
         </div>
       <div>
     </div>
