@@ -8,21 +8,22 @@ const tipCal = (value) => {
       return 11/50;
     case "great":
      return 1/5;
-      break;
+      // break;
     case "good":
       return 9/50;
-      break;
+      // break;
     case "eh":
      return 1/10;
   }
 }
 
+const billInfo = "This is your total Bill including tip:";
 //Need to use Rejex so numbers only can be used
 //Taking the total bill and multiplying it by a % to receive a total tip
-function changeEventHandler({ value }) {
+changeEventHandler = ({ value }) => {
   const tipPercentage = tipCal(value);
   const bill = document.getElementById('reneredBill').value;
-  const total = tipPercentage * Number(bill);
+  const total = tipPercentage * Number(bill).toFixed(2);
   document.getElementById("percentage").innerHTML = `Total: $${total}`;
 }
 /*
@@ -32,16 +33,46 @@ function changeEventHandler({ value }) {
   any value and replace it with a value or a space this is was used to take the
   $ and completly erase it leaving me a number only
  */
-function calculateBill() {
+calculateBill = (e) => {
   const bill = Number(document.getElementById('reneredBill').value);
   const calculatedTip = document.getElementById("percentage").innerHTML;
   const newTip = Number(calculatedTip.split(' ')[1].replace('$', ''));
-  document.getElementById("showTheBill").innerHTML = "This is your total Bill including tip:";
+  document.getElementById("showTheBill").innerHTML = billInfo;
   document.getElementById("showMeTheMoney").innerHTML = `$${bill + newTip}`;
-  console.log('showMeTheMoney', showMeTheMoney);
+  e.preventDefault();
 }
 
 //cannot get a value from a button
 const button = document.getElementById('leaveTip');
 button.addEventListener('click', calculateBill);
-console.log('button', button);
+
+/*
+Code for leaving a custom Tip'
+I would like to write some logic so if a tip of less than 10% is left that the
+user is informed.
+*/
+customTip = (e) => {
+  const bill = Number(document.getElementById('reneredBill').value);
+  const customTip = Number(document.getElementById('reneredCustomTip').value);
+  const newTip = Number(bill + customTip);
+  document.getElementById('customInformation').innerHTML = billInfo;
+  document.getElementById('showCustomTip').innerHTML = `$${newTip}`;
+  e.preventDefault();
+  }
+
+const customButton = document.getElementById('leaveCustomTip');
+customButton.addEventListener('click', customTip);
+
+/* This is code to leave no tip */
+
+
+leaveNoTip = (e) => {
+  const noTip = ["The U.S. has a bizarre government-imposed system that allows restaurants to pay waiters just $2.13 per hour",
+  "A large portion of 'servers' are single parents"];
+  let random = noTip[Math.floor(Math.random() * noTip.length)];
+  document.getElementById('leaveNoTip').innerHTML = random;
+  e.preventDefault();
+}
+
+const leaveNoTipButton = document.getElementById('noIWillNotTip');
+leaveNoTipButton.addEventListener('click', leaveNoTip);
