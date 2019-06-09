@@ -14,12 +14,15 @@
           <button id="yesIWould">YES</button>  <button id="noIDoNot">NO</button>
         </div> -->
         <div>
-          <form id="createTheButton">
-            <h3 id="totalBill">Your bill before tip is: </h3>
+          <!-- <form id="createTheButton">
+            <input id="totalBill" type="text" value = "Your bill before tip is:"> </input>
             <input id="reneredBill" type="text" placeholder="Numbers only"/> <br>
             <label>How would you like to tip? </label> <br>
-          </form>
+          </form> -->
           <form id="form">
+            <input id="totalBill" type="text" value = "Your bill before tip is:"> </input>
+            <input id="reneredBill" type="text" placeholder="Numbers only"/> <br>
+            <label>How would you like to tip? </label> <br>
             <label>Based upon Your experience?
               <select id="experience" name ="custom" onchange="changeEventHandler(this)">
                 <option value="">SELECT ONE </option>
@@ -29,19 +32,20 @@
                 <option value="eh">EH </option>
               </select>
             <div>
-              <p>Based upon your experience we suggest you tip:</p>
+              <p id="basedUponExperience"></p>
                 <p id="percentage"></p>
-                <!-- <h2 id="fairOrNot"></h2> -->
-                <button id="leaveTip" onclick"calculateBill()">YES</button>
+                <button id="leaveTip" onclick"calculateBill()">CALCULATE</button>
                 <p id="showTheBill"></p>
                 <p id="showMeTheMoney"></p>
             </div> <br>
-            <label>Would you like to leave a custom tip?
-              <p id="customTip">Leave a custom tip: </p>
+            <div id="customTip">
+            <!-- <label>Would you like to leave a custom tip? <br> -->
+              <input id="customTip" value ="Leave a custom tip:"> </input>
               <input id="reneredCustomTip" type="text" placeholder="Numbers only"/> <br>
-              <button id="leaveCustomTip" onclick="customTip()"> CUSTOM TIP </button> <br>
+              <button id="leaveCustomTip" onclick="customTip()"> CUSTOMIZE </button> <br>
               <p id="customInformation"></p>
               <p id="showCustomTip"></p>
+            </div>
           </form>
           <button id="noIWillNotTip" onclick"leaveNoTip()"> NO TIP </button> <br>
             <p id="leaveNoTip"></p>

@@ -21,9 +21,10 @@ const billInfo = "This is your total Bill including tip:";
 //Need to use Rejex so numbers only can be used
 //Taking the total bill and multiplying it by a % to receive a total tip
 changeEventHandler = ({ value }) => {
-  const tipPercentage = tipCal(value);
+  const tipPercentage = tipCal(value).toFixed(2);
   const bill = document.getElementById('reneredBill').value;
   const total = tipPercentage * Number(bill).toFixed(2);
+  document.getElementById("basedUponExperience").innerHTML = "Based upon experience it is suggested you tip"
   document.getElementById("percentage").innerHTML = `Total: $${total}`;
 }
 /*
@@ -34,6 +35,7 @@ changeEventHandler = ({ value }) => {
   $ and completly erase it leaving me a number only
  */
 calculateBill = (e) => {
+
   const bill = Number(document.getElementById('reneredBill').value);
   const calculatedTip = document.getElementById("percentage").innerHTML;
   const newTip = Number(calculatedTip.split(' ')[1].replace('$', ''));
@@ -68,7 +70,9 @@ customButton.addEventListener('click', customTip);
 
 leaveNoTip = (e) => {
   const noTip = ["The U.S. has a bizarre government-imposed system that allows restaurants to pay waiters just $2.13 per hour",
-  "A large portion of 'servers' are single parents"];
+  "Remember that we are human beings! I can’t tell you how many times customer comments and actions made me feel stupid, or inadequate even ugly says Amber Villani Newberry, who has 10 years of serving under her belt.",
+  "ALTHOUGH TIPS ARE NOT MANDATORY, YOU ARE CHOOSING TO USE THE SERVICE.",
+];
   let random = noTip[Math.floor(Math.random() * noTip.length)];
   document.getElementById('leaveNoTip').innerHTML = random;
   e.preventDefault();
