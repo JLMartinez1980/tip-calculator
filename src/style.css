@@ -1,16 +1,16 @@
-/*
+
 body {
-  background-image: url(./images/Tip.jpg);
+  background-image: url(./images/tip-cal.jpeg);
   background-size: cover;
-}
+  background-repeat: no-repeat;
 
-container {
+  /* Control the height of the image */
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
   position: relative;
-  text-align: right;
-  color: white;
 }
-
-
 
 .centered {
   position: absolute;
@@ -19,13 +19,27 @@ container {
   transform: translate(-50%, -50%);
 }
 
+container {
+  position: relative;
+  text-align: right;
+  color: white;
+}
+
+#customTip {
+  margin-top: 75px;
+}
+
 .doYouTip {
   font-size: 5px;
 }
 
+form {
+  height: 500px;
+  width: 400px
+  position: center;
 
-#form {
-  border-style: double;
-  border-width: thick;
 }
-/*
+
+#showCustomTip {
+  font-size: 33px;
+}
